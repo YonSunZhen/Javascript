@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS事件详解</title>
+</head>
+<body>
+	<div id="div">
+		<button id="btn">按钮</button>
+		<a href="http://www.baidu.com" id="aid">极客学院</a>
+	</div>
+	<!-- <script>
+		var btn=document.getElementById("btn");
+		btn.onclick = function(){alert("Hello DOM0级事件处理事件");}//事件被覆盖
+		btn.onclick = function(){alert("Hello DOM0级事件处理事件2");}
+		//btn.onclick = null;
+	</script> -->
+
+	<!-- <script>
+		var btn = document.getElementById("btn")
+		btn.addEventListener("click",demo1);
+		btn.addEventListener("click",demo2);//不会覆盖上一个事件
+		function demo1(){
+			alert("DOM事件二级处理程序1");
+		}
+		function demo2(){
+			alert("DOM事件二级处理程序2");
+		}
+		btn.removeEventListener("click",demo1);//取消事件
+	</script> -->
+
+	<!-- <script>
+		var btn = document.getElementById("btn");
+		if (btn.addEventListener) {
+			btn.addEventListener("click",demo);
+		}else if(btn.attachEvent){
+			btn.attachEvent("onclick",demo);
+		}else{
+			btn.onclick=demo();
+		}
+		function demo(){
+			alert("hahah");
+		}	
+	</script>兼容旧版本的浏览器 -->
+
+	<script>
+		document.getElementById("btn").addEventListener("click",showType);
+		document.getElementById("div").addEventListener("click",showDiv);
+		document.getElementById("aid").addEventListener("click",showA);
+		function showType(event){
+			alert("haha");
+			alert(event.type);//获得事件类型
+	            alert(event.target);//获得事件目标
+	            //event.stopPropagation();//阻止事件的冒泡
+		}
+	        function showDiv(){
+	        	alert("Div");//这句语句也执行了，属于事件的冒泡
+	        }
+	        function showA(event){
+	        	event.stopPropagation();
+	        	event.preventDefault();//阻止事件默认行为
+	        }
+	</script>
+
+
+</body>
+</html>

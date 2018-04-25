@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日期对象及其用法</title>
+	<script type="text/javascript">
+		function changeColor(){
+			var myDate = new Date();
+			var year = myDate.getFullYear();
+			var month = myDate.getMonth();
+			var day = myDate.getDate();
+			var hour = myDate.getHours();
+			var minute = myDate.getMinutes();
+			var second = myDate.getSeconds();
+			var week = myDate.getDay();
+
+
+			/*var str = "当前日期:"+year+"年"+(month+1)+"月"+day+"日"+hour+":"+minute+":"+second;
+			str += "今天是："+week;*/
+			document.getElementById("mess").innerText = myDate.toLocaleDateString();
+			alert(str);
+			
+
+		}
+		
+
+	</script>
+</head>
+<body>
+	
+	<div>
+	<span id="mess"></span>
+	</div>
+	<input type="button" value="日期对象get方法" onclick="changeColor()" />
+
+</body>
+</html>

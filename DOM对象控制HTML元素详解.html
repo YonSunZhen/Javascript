@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM对象控制HTML元素详解</title>
+</head>
+<body>
+	<p name="pn">hello</p>
+	<p name="pn">hello</p>
+	<p name="pn">hello</p>
+	<a href="" id="aid" title="得到了"></a>
+	<a id="aid2">aid2</a>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div id="div">
+		<p id="pid">ddd</p>
+	</div>
+	<script>
+		function getName(){
+			var count = document.getElementsByName("pn");
+			alert(count.length);//通过数组存储
+			var p = count[0];
+			p.innerHTML = "World";
+		    }
+        //getName();
+
+        function getAttr(){
+        	var anode = document.getElementById("aid");//获得该节点
+        	var attr = anode.getAttribute("id")//获得属性值
+        	alert(attr);
+        }
+        //getAttr();
+
+        function setArrr(){
+        	var anode = document.getElementById("aid2");
+        	anode.setAttribute("title","牛逼");//设置属性
+        	var attr = anode.getAttribute("title");
+        	alert(attr);
+        }
+        //setArrr();
+
+        function getChildNode(){
+        	var Childnode = document.getElementsByTagName("ul")[0].childNodes;//得到第一个子节点
+        	alert(Childnode.length);
+        	alert(Childnode[0].nodeType);
+        }
+        //getChildNode();
+
+        function getParentNode(){
+        	var div = document.getElementById("pid");
+        	alert(div.parentNode.nodeName);//获得父节点
+        }
+        //getParentNode();
+
+        function creatNode(){
+        	var body = document.body;
+        	var input = document.createElement("input");//创建一个元素节点
+        	input.type = "button";
+        	input.value = "按钮";
+        	body.appendChild(input);//添加节点
+        }
+        //creatNode();
+
+        function addNode(){
+        	var div = document.getElementById("div");
+        	var node = document.getElementById("pid");
+        	var newnode = document.createElement("P");
+        	newnode.innerHTML = "动态添加第一个元素";
+        	div.insertBefore(newnode,node);
+        }
+        //addNode();
+
+        function removeNode(){
+        	var div = document.getElementById("div");
+        	var p = div.removeChild(div.childNodes[1]);//删除div中的第一个子元素
+        }
+        //removeNode();
+
+        function getSize(){
+        	var width = document.body.offsetWidth;
+        	var height = document.body.offsetHeight;
+        	alert(width+","+height);
+        }//输出宽度和高度
+        getSize()
+
+	</script>
+    
+	
+</body>
+</html>

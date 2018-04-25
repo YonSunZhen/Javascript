@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+	<script type="text/javascript">
+		/*function Animal(){
+			this.s = "animal";
+		}
+
+		function Cat(){
+			Animal.call(this);//当前对象传过去
+			this.name = "cat";
+		}
+		var animal = new Animal();
+		var cat = new Cat();
+		alert(cat.s);*/
+
+		function Animal() {
+			
+		}
+		Animal.prototype.s = "animal";
+		function Cat() {
+			this.name = "cat";
+		}
+		Cat.prototype = Animal.prototype;
+		var animal  = new Animal();
+		var cat = new Cat();
+		alert(cat.s);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

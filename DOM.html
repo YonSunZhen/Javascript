@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- <p id="pid">Hello</p>
+	<button onclick="demo1()">按钮1</button>
+	
+	<a href="http://www.baidu.com" id="aid">haha</a>
+	<button onclick="demo2()">按钮2</button>
+	<script>
+		function demo1(){
+			var nv=document.getElementById("pid");
+			document.getElementsByTagName("p")//寻找相同元素中的第一个
+			nv.innerHTML = "World";// 使用属性innerHTML改变HTML内容
+		}
+	
+		function demo2(){
+			document.getElementById("aid").href="http://www.jikexueyuan.com";
+		}
+	</script> -->
+
+
+
+	<!-- <div id="div" class="div">
+		hello
+	</div>
+	<button onclick="demo3()">按钮</button>
+	<script>
+		function demo3(){
+			document.getElementById("div").style.background="blue";
+		}
+	</script> -->
+
+	
+
+
+	<p id="pid">Hello</p>
+	<!-- <button onclick="change()">按钮</button>
+	<script>
+		function change(){
+			document.getElementById("pid").innerHTML="World";
+		} 
+	</script> -->
+	<button id="btn">按钮</button>
+	<script>
+		/*document.getElementById("btn").addEventListener("click",function(){
+			alert("牛逼");//为按钮绑定事件，可以绑定多个事件
+		})*/
+
+		var x = document.getElementById("btn");
+		x.addEventListener("click",hello);
+		x.addEventListener("click",world);
+		x.removeEventListener("click",hello);
+		function hello(){
+			alert("hello");
+		}
+		function world(){
+			alert("world");
+		}
+	</script>
+
+
+</body>
+</html>
