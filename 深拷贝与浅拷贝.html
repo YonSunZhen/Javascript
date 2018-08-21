@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>深拷贝与浅拷贝</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// let a = [0,1,2,3,4];
+		// let b = a;
+		// console.log(a === b);
+		// a[0] = 1;
+		// console.log(a,b);
+		//浅拷贝，b的值随着a的值得变化而变化
+
+		// let a = 1;
+		// let b = a;
+		// a = 2;
+		// console.log(a,b);
+		//名义上的深拷贝，b=a之后拥有自己的栈内存
+
+		// let a = [0,1,[8,9,10],3,4];
+		// let b = new Array();
+		// for(key in a){
+		// 	b.push(key);
+		// }
+		// a[0] = 1;
+		// console.log(a);
+		// console.log(b);
+		//这样b拥有了自己的内存空间，属于深拷贝,每一层属性都要重新复制到
+
+		// let a = [0,1,[8,9,10],3,4];
+		// let aa = JSON.stringify(a);
+		// let b = JSON.parse(aa);
+		// a[2][1] = 8;
+		// console.log(a);
+		// console.log(b);
+		//实现深拷贝最好用的方式，没有之一
+
+
+	</script>
+</body>
+</html>

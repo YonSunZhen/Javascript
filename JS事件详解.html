@@ -53,13 +53,13 @@
 	            alert(event.target);//获得事件目标
 	            //event.stopPropagation();//阻止事件的冒泡
 		}
-	        function showDiv(){
-	        	alert("Div");//这句语句也执行了，属于事件的冒泡
-	        }
-	        function showA(event){
-	        	event.stopPropagation();
-	        	event.preventDefault();//阻止事件默认行为
-	        }
+        function showDiv(){
+        	alert("Div");//这句语句也执行了，属于事件的冒泡
+        }
+        function showA(event){
+        	event.stopPropagation();
+        	event.preventDefault();//阻止事件默认行为
+        }
 	</script>
 
 

@@ -1,7 +1,7 @@
 window.onload = function(){
 	imgLocation("container","box");
 
-    var imgData={"data":[{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"}]};
+    var imgData={"data":[{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"},{"src":"2.jpg"},{"src":"3.jpg"},{"src":"4.jpg"}]};
 	window.onscroll = function(){//监听滚动条
 		if(checkFlag()){
 			var cparent = document.getElementById("container");

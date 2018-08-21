@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*var scope = "global scope";
+		function checkscope(){
+			var scope = "local scope";
+			function f(){return scope;}
+			return f;//返回一个函数对象
+		}
+		alert(checkscope()());*/
+
+		/*var unipueInteger = function(){//定义函数并立即调用
+			var counter = 0;
+			//函数的私有状态，但外部函数返回之后，其他代码都无法访问到，只有内部的函数才能访问
+			return function(){
+				return counter++;
+			};
+		}();
+		console.log(unipueInteger);*/
+
+		var func = (function(){
+			var a = 'haha';
+			var func1 = function(){
+				a += 'a';
+				console.log(a);
+			}
+			return func1;
+		})();
+		var func2 = func;//为什么要加括号
+		func2();
+		func2();
+
+		/*for(var i = 0; i < 4; i++){
+			setTimeout(function(){
+				console.log(i)
+			},0)
+		}*/
+
+		for(var i = 0; i < 4; i++){
+			(function(i){
+				setTimeout(function(){
+					console.log(i)
+				},0)
+			})(i)
+		}
+	</script>
+	
+</body>
+</html>

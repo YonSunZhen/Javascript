@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function(){//onload 事件会在页面或图像加载完成后立即发生
 	var ousername = document.getElementById("UserName");
 	var opassword = document.getElementById("Password");
 	var obutton = document.getElementById("btn");
@@ -21,12 +21,12 @@ window.onload = function(){
 	    };
 	    ajaxObj.open('POST','http://yjhapi.agxx.club/iweb/login/check');
 	    //ajaxObj.send();
-	    ajaxObj.setRequestHeader("Content-Type","application/json");
+	    ajaxObj.setRequestHeader("Content-Type","application/json");//表示以json的形式提交数据
 	    ajaxObj.onreadystatechange = function(){
     	if(ajaxObj.readyState == 4 && ajaxObj.status == 200){
     		res = ajaxObj.responseText;
     		res = res.substring(1);
-    		res = JSON.parse(res);
+    		res = JSON.parse(res);//将获得的responseText(JSON格式)转化为javascript对象(数组)
     		ajaxObj.abort();
     		ifLogin(res);
     		console.log(res);

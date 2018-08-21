@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>jfkskafk</div>
+	<script type="text/javascript">
+		var length = 10;
+		function fn(){
+			console.log(this.length);
+		}
+
+		var obj = {
+			length:5,
+			method:function(fn){
+				fn();
+				arguments[0]();
+			}
+		};
+		obj.method(fn,1);
+	</script>
+</body>
+</html>
