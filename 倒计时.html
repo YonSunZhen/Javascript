@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<script type="text/javascript">
+		function calDay(){
+		var date = new Date();
+		document.getElementById("currentDate").innerText = date.toLocaleDateString();
+		var year = document.getElementById("year").value;
+		var month = document.getElementById("month").value-1;
+		var day = document.getElementById("day").value;
+		var endDate = new Date(year,month,day);
+		var diff = endDate.getTime()-date.getTime();
+		var result = Math.ceil(diff/(1000*60*60));
+		document.getElementById("result").innerText = result;
+
+
+	}
+	</script>
+</head>
+<body>
+	<span id="currentDate"></span><br/>
+	<label >年</label><input type="text" id="year"/>
+	<label >月</label><input type="text" id="month"/>
+	<label >日</label><input type="text" id="day"/>
+	<input type="button" value="计算" onclick="calDay()"/><br/>
+	<label >倒计时为：</label><span id="result"></span>
+
+	
+</body>
+</html>

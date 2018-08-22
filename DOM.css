@@ -1,0 +1,27 @@
+.div{
+	background-color: red;
+	height: 200px;
+	width: 200px;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#container{
+	position:relative;
+}
+.box{
+	padding: 5px;
+	float: left;
+}
+.box_img{
+	padding: 5px;
+	border:5px solid #cccccc;
+	box-shadow: 0 0 10px #cccccc;
+	border-radius: 10px;
+}
+.box_img img{
+	width:150px;
+	height: auto;
+}

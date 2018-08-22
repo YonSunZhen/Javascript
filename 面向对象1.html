@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象用法</title>
+	<script type="text/javascript">
+		/*var s = {
+			name:"wws",
+			age : 32,
+			show : function(){
+				alert(s.name+":"+s.age);
+			}
+
+		};
+		s.show();*/
+
+		/*var s = new Object();
+		s.name = "was";
+		s.age = 32;
+		alert(s.name+":"+s.age);*/
+
+        (function(){
+        	var n = "孙永镇1";
+        	function People(name){
+        	this._name = name;
+            }
+            People.prototype.say = function(){
+        	alert("peo-hello"+this._name);
+            }
+            window.People = People;//封装之后必须将其赋给window才能使用
+        }());//实现封装
+
+        function Student(name){
+        	this._name = name;
+        }
+        Student.prototype = new People();//Student继承People
+        var superStuSay = Student.prototype.say;
+        Student.prototype.say = function(){
+        	superStuSay.call(this);//调用父类的方法
+        	alert("std-hello"+this._name);
+        }
+        var s = new Student("孙永镇");//创建Student的一个实例
+        s.say();
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

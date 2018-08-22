@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- <button onclick="demo()">按钮</button>
+	<script>
+		function demo() {
+			alert("Hello");
+		}
+	</script> -->
+
+	<div class="div" onmouseout="onOut(this)" onmouseover="onOver(this)"></div>
+	<script>
+		function onOver(ooj){
+			ooj.innerHTML = "Hello";
+		}
+		function onOut(ooj){
+			ooj.innerHTML = "World";
+		}
+	</script>
+
+	<form>
+		<input type="text" name="" onchange="changeDemo(this)">
+		<input type="text" name="" onselect="changeDemo(this)">
+		<input type="text" name="" onfocus="changeDemo2(this)">
+	</form>
+	<script >
+		function changeDemo(bg){
+			// alert("Hello,内容改变了");
+			bg.style.background="red";
+		}
+		function changeDemo2(bg){
+			bg.style.background="blue";
+		}
+        function mgs(){
+        	alert("网页内容加载完毕");
+        }
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

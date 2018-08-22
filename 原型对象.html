@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型对象</title>
+	<script type="text/javascript">
+		//普通的声明方式
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+			this.show = function(){
+				alert(this.name+":"+this.age);
+			}
+		}
+		var s = new Person("wws",32);
+		var d = new Person("ddd",32);
+		s.show();
+		d.show();
+
+		//使用构造函数声明
+        var Person =new Function('m','n','alert(m+n)')
+        Person(2,3)
+
+
+     
+
+		//alert(s.constructor == Person);
+		//alert(s instanceof Person);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

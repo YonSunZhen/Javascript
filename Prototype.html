@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototype用法</title>
+	<script type="text/javascript">
+		/*function Cat(name){
+			this.name = name;
+			this.show = function(){
+				alert(this.name);
+			}
+		}
+		var c1 = new Cat("大黄");
+		var c2 = new Cat("小黄");
+		c1.show();
+		c2.show();//浪费地址空间*/
+
+		alert("jjjj");
+
+		function Cat(name){
+			this.name = name;
+		}
+		Cat.prototype.type="猫科动物";
+		Cat.prototype.show = function(){
+			alert(this.name);
+		}//构造函数，实现方法公用
+
+		var c1 = new Cat("大黄");
+		var c2 = new Cat("小黄");
+		c1.show();
+		alert(c1.show == c2.show);
+
+		alert(Cat.prototype.isPrototypeOf(c1));//验证c1是否继承与Cat
+
+
+
+
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

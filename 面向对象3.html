@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<!-- <script type="text/javascript" src="ckfinder/ckfinder.js"></script> -->	
+</head>
+<body>
+	<!-- <textarea name="haha"></textarea>
+    <script >CKEDITOR.replace('haha')</script> -->
+    <!-- <script>
+		function Person(name,age) 
+		{ 
+		    this.name=name; 
+		    this.age=age;
+		    this.show= function(){
+		    	alert("我叫"+this.name+",今年"+this.age);
+		    } 
+		}//上述代码，创建多个实例时，会重复调用function();创建多个函数实例，这些函数实例还不是一个作用域中，当然这一般不会有错，但这会造成内存浪费
+
+
+		//使用原型给类添加方法 
+		/*Person.prototype.show=function() 
+		{ 
+		    alert("我叫"+this.name+",今年"+this.age); 
+		} */
+
+		//创建两个对象 
+		var person1 =new Person('张三',20); 
+		var person2 =new Person('李四',23); 
+		//调用原型里面的方法 
+		person1.show(); 
+		person2.show(); 
+    </script> -->
+
+    <script>
+    	function Person(name, age, job) {
+		this.name = name;
+		//this.age = age;
+		//this.job = job;
+		this.lessons = ['Math', 'Physics'];//this关键字必不可少
+
+		Person.prototype.getName=function(){
+               //return this.name;//共享方法
+               alert(this.name);
+		}//可以放在函数外也可以放在函数内，与位置无关，主要作用是不要浪费内存
+
+		}
+		// Person.prototype = {
+		// constructor: Person,//原型字面量方式会将对象的constructor变为Object，此外强制指回Person
+		// getName: function () {
+		// return this.name;
+		// }
+		// }
+
+		
+
+		var person1 = new Person('Jack', 19, 'SoftWare Engneer');
+		person1.lessons.push('Biology');
+		var person2 = new Person('Lily', 39, 'Mechanical Engneer');
+		alert(person1.lessons);//Math,Physics,Biology
+		alert(person2.lessons);//Math,Physics
+		person1.getName();
+		person2.getName();
+		//alert(person1.getName === person2.getName);//true,//共享原型中定义方法
+
+    </script>
+	
+	
+
+</body>
+

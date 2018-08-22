@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	#div{
+		background-color: red;
+		color: blue;
+		
+	}
+</style>
+<body>
+	<div id="div" style="width:200px;height: 200px;">sss</div>
+	<script type="text/javascript">
+		var div = document.getElementById("div");
+		div.style.removeProperty("height");
+		console.log(div.style.item(2));
+		console.log(div.style.getPropertyValue("width"));
+		var computedStyle = document.defaultView.getComputedStyle(div,null);
+		console.log(computedStyle.cssText);
+	</script>
+</body>
+</html>

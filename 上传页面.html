@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上传图片页面</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+	<style type="text/css">
+	    #left{
+	    	height:440px;
+	    	width:490px;
+	    	/*background-color: grey;*/
+	    	margin-top: 100px;
+	    	border:2px solid black;
+	    	border-radius: 6px;
+	    	margin-left: 40px;
+	    	/*border-top: 10px;*/
+
+	    }
+		#right{
+			height:auto;
+			width: 300px;
+			margin: 0 auto;
+			margin-top: 100px;
+			/*border:2px solid black;
+	    	border-radius: 6px;*/
+	    	/*order:10px;*/
+		}
+		.img{
+			display: block;
+			max-width: 100%;
+			/*height: auto;*/
+			max-height:100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- <h3 style="padding-left: 100px;padding-top: 20px; ">图片预览框</h3> -->
+		 <div class="row">
+		 	<div class="col-md-6">
+		 		<div id="left">
+		 			<img src="" class="img" alt="图片预览框" id="img0">
+		 		</div>
+		 	</div>
+            <div class="col-md-6">
+            	<form id="right">
+					<div class="form-group center-block"  style="text-align:center;">
+					    <h1>上传图片</h1>
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputEmail1" class="lbl">请选择相册名</label>
+					    <select class="form-control">
+						    <option>相册1</option>
+						    <option>相册2</option>
+						    <option>相册3</option>
+						    <option>相册4</option>
+						</select>
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputPassword1">图片名</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入图片名">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputPassword1">图片备注</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="输入图片的信息">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputFile">选择图片</label>
+					    <input type="file" id="file0" name="file0">
+					    <!-- <p class="help-block">Example block-level help text here.</p> -->
+					</div>
+					<div class="form-group" style="text-align: center;">
+						<input class="btn btn-primary btn-block" type="button" value="上传图片">
+				    </div>
+				</form>
+            </div>
+		 </div>
+    </div>	
+</div>
+<script>
+    $('#file0').change(aaa);
+    function aaa() {
+        const objURL = getObjectURL(this.files[0]);
+        console.log("objURL = " + objURL);
+        if (objURL) {
+            $('#img0').attr('src', objURL);
+        }
+    }
+    function getObjectURL(file) {
+        let url = null;
+        if (undefined !== window.createObjectURL) { // basic
+            url = window.createObjectURL(file) ;}
+        else if (undefined !== window.URL) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file) ;}
+        else if (window.webkitURL!==undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file) ;}
+        return url ;
+    }
+</script>
+</body>
+</html>
