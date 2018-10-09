@@ -12,8 +12,8 @@ window.onload=function(){
             alert("请输入密码");
 	    }else{
 	    	var loginData = {
-	    	"mobile":username,
-	    	"pwd":password,
+		    	"mobile":username,
+		    	"pwd":password,
 	        }
 	        var login = JSON.stringify(loginData);
 	    	ajax('http://yjhapi.agxx.club/iweb/login/check',login,function(res){

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js实现二分法查找</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// arr查找的数组,low查找的起点,high查找的终点,key查找的值
+		// 返回关键字的位置
+		// 采用的是递归的算法,也可以不递归
+		function binary_search(arr,low,high,key){
+			if(low > high){
+				return -1;
+			}
+			// 若是小数则向下取整
+			var mid = Math.floor( (high+low) / 2);
+			if(arr[mid] == key){
+				return mid;
+			}else if(arr[mid] > key){
+				high = mid - 1;
+				return binary_search(arr, low, high, key);
+			}else if(arr[mid] < key){
+				low = mid + 1;
+				return binary_search(arr, low, high, key);
+			}
+		};
+		var arr = [1,2,3,4,5,6,7,8,9,10,11,23,44,86];
+		// 查找关键字10的位置
+		var result = binary_search(arr,0,13,6);
+		alert(result);
+		//alert( parseInt(5.1) );
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>apply</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// function a(){
+		// 	y = function(){
+		// 		X = 2;
+		// 	}
+		// 	return function(){
+		// 		var x = 3;
+		// 		y();
+		// 		console.log(this.x);
+		// 	}.apply(this,arguments);
+		// }
+		// a();
+
+		let map = new WeakMap();
+		let key1 = [];
+		let key2 = {};
+
+		// let obj = {
+		// 	a:"a",
+		// 	b:"b"
+		// };
+
+		map.set(key1,1);
+		map.set(key2,45);
+
+		// obj.a = "aa";
+
+		console.log(map.get(key1));
+		console.log(map.get(key2));
+
+		// var map = Object.create(null);
+		// var key1 = {};
+		// var key2 = {};
+		// map[key1] = "foo";
+
+		// console.log(map[objectObject]);
+		
+	</script>
+</body>
+</html>

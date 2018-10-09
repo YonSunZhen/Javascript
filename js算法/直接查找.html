@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js实现直接查找</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function direct_search(arr,key){
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] == key){
+					var n = i;
+				}
+			}
+			if(n !== undefined){
+				return n;
+			}else{
+				return '不存在';
+			}
+		}
+		var arr = [1,2,3,4,5,6,7,8,9,10,11,23,44,86];
+		var result = direct_search(arr,111);
+		alert(result);
+	</script>
+</body>
+</html>

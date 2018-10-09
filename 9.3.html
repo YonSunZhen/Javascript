@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Foo(){
+			//var getName;//有声明和没声明的区别
+			getName = function(){
+				console.log("1");
+			}//没有var声明所以并不存在getName，相当于赋值语句
+			return this;
+		}
+
+		Foo.getName = function(){
+			console.log("2");
+		};
+		Foo.prototype.getName = function(){
+			console.log("3");
+		};
+		var getName = function(){
+			console.log("4");
+		};
+
+		function getName(){
+			console.log("5");
+		}//运行时以提升到函数表达式之前，被覆盖 
+
+
+		// console.log(x);
+		// var x = 1;
+		// function x(){}
+
+		Foo.getName(); //2
+		getName();//4
+		Foo().getName();//1，直接调用，this指向window
+		getName();//1 getName已被修改，与上一问一样
+		new Foo.getName();//2,运算符优先级？，括号高于new
+		new Foo().getName();//3
+		new new Foo().getName();//3
+	</script>
+</body>
+</html>
